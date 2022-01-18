@@ -22,11 +22,11 @@ topics=(
 )
 
 # Run docker-compose exec to make them
-for topic in "${topics[@]}"
-do
-  echo "Making topic $topic"
+#for topic in "${topics[@]}"
+#do
+  echo "Making topic test"
   until docker-compose exec kafka \
-    kafka-topics --create --topic $topic --partitions 1 --replication-factor 1 --if-not-exists --bootstrap-server localhost:9092
+    kafka-topics --create --topic test --partitions 1 --replication-factor 1 --if-not-exists --bootstrap-server localhost:9092
   do
     topic_result="$?"
     if [ "$topic_result" == "1" ]; then
@@ -37,4 +37,4 @@ do
     fi
   done
 
-done
+#done
