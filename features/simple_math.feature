@@ -1,9 +1,10 @@
-Feature: Teste
+# language: pt
+Funcionalidade: Teste
 
-    Scenario: Teste de cenário
-        Given a variable set to 1
-        When I increment the variable by 1
-        Then the variable should contain 2
+    Cenário: Teste de cenário
+        Dado a variable set to 1
+        Quando I increment the variable by 1
+        Então the variable should contain 2
     
     Cenário: Check Tea Pot
         Dado I make a GET request to "http://httpbin.org/status/418"
