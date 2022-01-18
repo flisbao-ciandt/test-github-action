@@ -15,8 +15,6 @@ jobs:
         uses: actions/checkout@v2
       - name: start containers
         run: docker-compose -f "docker-compose.yml" up -d
-      - name: waiter
-        run: sleep 20
       - name: create topics
         run: docker-compose exec -T kafka kafka-topics --create --topic test --partitions 1 --replication-factor 1 --if-not-exists --bootstrap-server localhost:9092
       - name: install node
@@ -26,7 +24,7 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: run tests
-        run: npx cucumber
+        run: npx cucumber-js
       - name: Stop Container
         if: always()
         run: docker-compose -f "docker-compose.yml" down
