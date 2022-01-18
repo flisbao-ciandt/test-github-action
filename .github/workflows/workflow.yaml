@@ -1,0 +1,30 @@
+name: Test
+
+on: 
+  push:
+   branches:
+    - main
+
+jobs: 
+  docker: 
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: start containers
+        run: docker-compose -f "docker-compose.yml" up -d
+      - name: create topics
+        run: chmod +x run_docker && ./run_docker
+      - name: install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npx cucumber
+      - name: Stop Container
+        if: always()
+        run: docker-compose -f "docker-compose.yml" down
