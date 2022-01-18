@@ -6,17 +6,20 @@ DOCKER_VERSION=$(docker --version)
 # Start the docker compose file
 echo "Running docker compose up. Docker version $DOCKER_VERSION. Compose version $COMPOSE_VERSION. "
 
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-docker-compose up -d
-
 if [ "$?" == "1" ]; then
   echo "Failed to start docker images."
   exit 1
 fi
 
 # List of topics to create in container
-topics=("test")
+topics=(
+  "test"
+  "test2"
+  "test3"
+  "test4"
+  "test5"
+  "test6"
+)
 
 # Run docker-compose exec to make them
 for topic in "${topics[@]}"
