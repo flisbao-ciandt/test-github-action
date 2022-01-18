@@ -16,7 +16,7 @@ jobs:
       - name: start containers
         run: docker-compose -f "docker-compose.yml" up -d
       - name: create topics
-        run: chmod +x run_docker && ./run_docker
+        run: chmod +x run_docker.sh && sh run_docker.sh
       - name: install node
         uses: actions/setup-node@v1
         with:
