@@ -24,7 +24,7 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: start mock mockServer
-        run: node mockServer.js
+        run: nohup node mockServer.js & > output.log & 
       - name: run tests
         run: npm run test
       - name: Stop Container
