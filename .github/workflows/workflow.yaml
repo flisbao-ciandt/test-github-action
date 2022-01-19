@@ -24,7 +24,7 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: run tests
-        run: npx cucumber-js
+        run: npm run test
       - name: Stop Container
         if: always()
         run: docker-compose -f "docker-compose.yml" down
