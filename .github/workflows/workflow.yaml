@@ -23,6 +23,8 @@ jobs:
           node-version: 16.x
       - name: install dependencies
         run: npm install
+      - name: start mock mockServer
+        run: node mockServer.js
       - name: run tests
         run: npm run test
       - name: Stop Container
