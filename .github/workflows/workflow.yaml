@@ -24,7 +24,7 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: start mock mockServer
-        run: nohup node mockServer.js & > output.log & 
+        run: nohup npx ezmockserver & > output.log & 
       - name: run tests
         run: npm run test
       - name: Stop Container

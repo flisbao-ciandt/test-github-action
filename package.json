@@ -11,6 +11,7 @@
   "dependencies": {
     "@cucumber/cucumber": "^8.0.0-rc.2",
     "axios": "^0.25.0",
+    "ezmockserver": "^0.9.0",
     "node-rdkafka": "^2.12.0",
     "pactum": "^3.1.2"
   }

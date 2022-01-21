@@ -1,0 +1,35 @@
+{
+    "api": {
+      "httpPort": 3050
+    },
+    "server": {
+      "httpPort": 3000
+    },
+    "sessionsDirectory": "./sessions/",
+    "defaultSession": {
+      "name": "default"
+    },
+    "defaultMatchers": [
+      {
+        "name": "subscribed-products",
+        "method": "^GET$",
+        "url": "/subscribed-products/.*"
+      },
+      {
+        "name": "billingEvents",
+        "method": "^GET$",
+        "url": "/billingEvents/.*"
+      },
+      {
+        "name": "sendEmail",
+        "method": "^POST$",
+        "url": "/email/.*"
+      },
+      {
+        "name": "healthcheck",
+        "method": "^GET$",
+        "url": "/healthcheck"
+      }
+    ]
+  }
+  
