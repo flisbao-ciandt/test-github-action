@@ -18,6 +18,8 @@ Um docker-compose com os serviços que deverão subir, como por exemplo o kafka,
 
 E os testes que ficam na pasta "features"
 
+# Projeto da pasta Raiz
+Esse projeto é um exemplo de como subir um docker-compose com kafka e rodar na pipeline
 # Como posso aplicá-lo no meu projeto?
 Tem um projeto em node na pasta "examples" que servirá como se deve estruturar um projeto.
 
