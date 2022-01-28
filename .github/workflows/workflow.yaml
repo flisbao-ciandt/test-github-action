@@ -42,10 +42,10 @@ jobs:
       - name: install dependencies node app
         run: cd ./example/node-express-server && npm install
       - name: run node example
-        run: nohup npm run startApp & > output.node.log
+        run: cd ./example/node-express-server && nohup npm run startApp & > output.node.log
       - name: install dependencies node app
-        run: cd ./tests/components && npm install        
+        run: cd ./example/node-express-server/tests/components && npm install        
       - name: start mock mockServer
-        run: nohup npm run mock-server-up & > output.mock.log
+        run: cd ./example/node-express-server/tests/components && nohup npm run mock-server-up & > output.mock.log
       - name: run component tests
-        run: npm run component-test     
+        run: cd ./example/node-express-server/tests/components && npm run component-test     
