@@ -1,0 +1,15 @@
+{
+  "date": "2022-01-28T05:36:47.282Z",
+  "ip": "::1",
+  "host": "localhost:3002",
+  "href": "http://localhost:3002/anotherApp",
+  "method": "GET",
+  "url": "/anotherApp",
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.25.0",
+    "host": "localhost:3002",
+    "connection": "close"
+  },
+  "body": {}
+}

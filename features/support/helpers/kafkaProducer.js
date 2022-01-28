@@ -9,7 +9,6 @@ const createProducer = () => {
        try {
            const producer = new Kafka.Producer(kafkaConfig, { acks: -1, 'request.required.acks': -1})
            producer.on('ready', () => { 
-                console.log('Producer is connected')
                 resolve(producer)
            })
  
@@ -27,11 +26,10 @@ const createProducer = () => {
     })
 }
 
-class KafkaConnector {
+class KafkaProducer {
    instance = null
    static async getInstance() {
        if (!this.instance) {
-           console.log('creating instance')
            try {
                this.instance = await createProducer()
            } catch (err) {
@@ -39,14 +37,12 @@ class KafkaConnector {
            }
            
        }
-       console.log('instance created')
        return this.instance;
    }
 }
 
 async function sendMessage(connector, topicName, message) {
     try {
-        console.log('sending message')
         await connector.produce(topicName, null, Buffer.from(message), null, null, null, null, null)
     } catch(error) {
          console.error(`An error occurred while sendMessage ${error.message}`)
@@ -56,4 +52,4 @@ async function sendMessage(connector, topicName, message) {
 async function disconnect(connector) {
     await connector.disconnect();
 }
-module.exports = { KafkaConnector, sendMessage, disconnect };
+module.exports = { KafkaProducer, sendMessage, disconnect };

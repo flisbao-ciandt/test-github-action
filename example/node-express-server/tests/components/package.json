@@ -1,10 +1,11 @@
 {
-  "name": "test_component",
+  "name": "component-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js"
+    "mock-server-up": "ezmockserver",
+    "component-test": "cucumber-js"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +13,6 @@
     "@cucumber/cucumber": "^8.0.0-rc.2",
     "axios": "^0.25.0",
     "ezmockserver": "^0.11.0",
-    "node-rdkafka": "^2.12.0",
-    "pactum": "^3.1.2"
+    "pactum": "^3.1.3"
   }
 }
