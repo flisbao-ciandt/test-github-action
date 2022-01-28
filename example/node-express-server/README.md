@@ -14,3 +14,18 @@ A configuração inicial do ezmockserver pode ser iniciada com o comando
 ```shell
 npx ezmockserver init
 ```
+
+# Para rodar o app
+```sh
+cd ./example/node-express-server && npm run startApp
+```
+
+# Para rodar o Ezmockserver
+```sh
+cd ./example/node-express-server/tests/components && npm run mock-server-up
+```
+
+# Para rodar o Cucumber
+```sh
+cd ./example/node-express-server/tests/components && npm run component-test
+```
